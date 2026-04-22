@@ -149,9 +149,6 @@ class CNews extends CBitrixComponent
                 if (!empty($filter["DATE_ACTIVE_FROM"]["DATE_ACTIVE_TO"])){
                     $arFilter["<=DATE_ACTIVE_TO"] = date("DD.MM.YYYY HH:MI:SS", strtotime($filter["DATE_ACTIVE_FROM"]["DATE_ACTIVE_TO"]));
                 }
-                if (!empty($filter["DATE_ACTIVE_FROM"]["DATE_ACTIVE_FROM"])){
-                    $arFilter[">=DATE_ACTIVE_FROM"] = date("DD.MM.YYYY HH:MI:SS", strtotime($filter["DATE_ACTIVE_FROM"]["DATE_ACTIVE_FROM"]));
-                }
                 if (!empty($filter[$this->arParams['FILTER_FIELD_CODE'][0]]) && (strpos($this->arParams['FILTER_FIELD_CODE'][0], "DATE_ACTIVE") === false && !in_array($this->arParams['FILTER_FIELD_CODE'][0], ["TIMESTAMP_X", "SHOW_COUNTER_START"]))){
                     $arFilter[$this->arParams['FILTER_FIELD_CODE'][0]] = $filter[$this->arParams['FILTER_FIELD_CODE'][0]];
                 }
